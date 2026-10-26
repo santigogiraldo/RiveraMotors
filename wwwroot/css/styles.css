@@ -1,0 +1,90 @@
+/*
+    ESTILOS GENERALES
+*/
+
+body {
+    background-color: #f2f2f2;
+    color: #212529;
+}
+
+
+/*
+    ENCABEZADO
+*/
+
+header {
+    background-color: #212529;
+    color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+
+/*
+    TÍTULOS
+*/
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+/*
+    VEHÍCULOS
+*/
+
+#vehiculos .card {
+    transition: transform 0.3s;
+}
+
+#vehiculos .card:hover {
+    transform: translateY(-5px);
+}
+
+
+/*
+    IMÁGENES DE VEHÍCULOS
+*/
+
+#vehiculos .card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
+
+
+/*
+    MULTIMEDIA
+*/
+
+#multimedia {
+    margin-top: 30px;
+}
+
+
+/*
+    INVENTARIO
+*/
+
+#inventario {
+    margin-top: 30px;
+}
+
+
+/*
+    CONTACTO
+*/
+
+#contacto {
+    margin-top: 30px;
+}
+
+
+/*
+    PIE DE PÁGINA
+*/
+
+footer {
+    background-color: #212529;
+    color: white;
+}

@@ -1,0 +1,693 @@
+﻿@model IEnumerable<RiveraMotors.Models.Vehiculo>
+
+@{
+    ViewData["Title"] = "Vehículos";
+}
+
+<div class="container">
+
+    <!-- ENCABEZADO -->
+    <header id="inicio" class="text-center py-4">
+
+        <h1 class="display-4">
+            Rivera Motors
+        </h1>
+
+        <p class="lead">
+            Tu próximo automóvil comienza aquí.
+        </p>
+
+        <p>
+            En Rivera Motors encontrarás vehículos seleccionados para
+            ofrecer comodidad, rendimiento y seguridad. Conoce nuestro
+            catálogo de automóviles y encuentra el vehículo que se adapte
+            a tus necesidades.
+        </p>
+
+    </header>
+
+
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded mb-4">
+
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="#inicio">
+                Rivera Motors
+            </a>
+
+            <div class="navbar-nav">
+
+                <a class="nav-link" href="#inicio">
+                    Inicio
+                </a>
+
+                <a class="nav-link" href="#vehiculos">
+                    Vehículos
+                </a>
+
+                <a class="nav-link" href="#multimedia">
+                    Multimedia
+                </a>
+
+                <a class="nav-link" href="#inventario">
+                    Inventario
+                </a>
+
+                <a class="nav-link" href="#contacto">
+                    Contacto
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+        <!-- INICIO -->
+        <section id="inicio-contenido" class="py-4">
+
+            <h2 class="text-center mb-4">
+                ¿Por qué elegir Rivera Motors?
+            </h2>
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <ul class="list-group">
+
+                        <li class="list-group-item">
+                            Vehículos seleccionados y revisados.
+                        </li>
+
+                        <li class="list-group-item">
+                            Asesoría personalizada.
+                        </li>
+
+                        <li class="list-group-item">
+                            Opciones de financiación.
+                        </li>
+
+                        <li class="list-group-item">
+                            Pruebas de manejo.
+                        </li>
+
+                        <li class="list-group-item">
+                            Atención enfocada en las necesidades de cada cliente.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <p class="p-4 border rounded shadow-sm">
+
+                        Explora nuestros vehículos, conoce sus características
+                        y solicita información sobre el modelo que más te interese.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- VEHÍCULOS -->
+        <section id="vehiculos" class="py-4">
+
+            <h2 class="text-center mb-4">
+                Nuestros vehículos destacados
+            </h2>
+
+            <p class="text-center mb-5">
+
+                Descubre nuestros modelos disponibles.
+                En Rivera Motors seleccionamos vehículos para
+                diferentes estilos de conducción y necesidades.
+
+            </p>
+
+
+            <!-- VEHÍCULOS GENERADOS DESDE EL MODELO -->
+
+            <div class="row g-4">
+
+                @foreach (var vehiculo in Model)
+                {
+
+                    <div class="col-12 col-md-4">
+
+                        <article class="card h-100 shadow">
+
+                            @if (vehiculo.Nombre == "Toyota Corolla")
+                            {
+                                <img
+                                    src="~/imagenes/Corolla2026.jfif"
+                                    class="card-img-top"
+                                    alt="Toyota Corolla 2026">
+                            }
+                            else if (vehiculo.Nombre == "BMW Serie 3")
+                            {
+                                <img
+                                    src="~/imagenes/BMW2025.jfif"
+                                    class="card-img-top"
+                                    alt="BMW Serie 3 2025">
+                            }
+                            else if (vehiculo.Nombre == "Mazda CX-5")
+                            {
+                                <img
+                                    src="~/imagenes/Mazda2026.jfif"
+                                    class="card-img-top"
+                                    alt="Mazda CX-5 2026">
+                            }
+
+                            <div class="card-body">
+
+                                <h3 class="card-title">
+                                    @vehiculo.Nombre
+                                </h3>
+
+                                <p class="card-text">
+
+                                    Vehículo seleccionado por Rivera Motors
+                                    por su comodidad, rendimiento y tecnología.
+
+                                </p>
+
+                                <ul>
+
+                                    <li>
+                                        Tipo: @vehiculo.Tipo
+                                    </li>
+
+                                    <li>
+                                        Año: @vehiculo.Año
+                                    </li>
+
+                                    <li>
+                                        Motor: @vehiculo.Motor
+                                    </li>
+
+                                    <li>
+                                        Precio:
+                                        $@vehiculo.Precio.ToString("N0")
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                }
+
+            </div>
+
+        </section>
+
+
+        <!-- MULTIMEDIA -->
+        <section id="multimedia" class="py-4">
+
+            <h2 class="text-center mb-4">
+                Multimedia
+            </h2>
+
+            <p class="text-center">
+                Conoce algunos de nuestros vehículos mediante imágenes
+                y videos.
+            </p>
+
+
+            <div class="row g-4">
+
+
+                <!-- TOYOTA -->
+
+                <div class="col-12 col-md-4">
+
+                    <article class="card h-100">
+
+                        <div class="card-body">
+
+                            <h3 class="card-title">
+                                Toyota Corolla
+                            </h3>
+
+                            <div class="ratio ratio-16x9">
+
+                                <iframe
+                                    src="https://www.youtube.com/embed/ZS70FAFk0cg"
+                                    title="Video Toyota Corolla"
+                                    allowfullscreen>
+                                </iframe>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- MAZDA -->
+
+                <div class="col-12 col-md-4">
+
+                    <article class="card h-100">
+
+                        <div class="card-body">
+
+                            <h3 class="card-title">
+                                Mazda CX-5
+                            </h3>
+
+                            <div class="ratio ratio-16x9">
+
+                                <iframe
+                                    src="https://www.youtube.com/embed/dfuKhmeyjug"
+                                    title="Video Mazda CX-5"
+                                    allowfullscreen>
+                                </iframe>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- BMW -->
+
+                <div class="col-12 col-md-4">
+
+                    <article class="card h-100">
+
+                        <div class="card-body">
+
+                            <h3 class="card-title">
+                                BMW Serie 3
+                            </h3>
+
+                            <div class="ratio ratio-16x9">
+
+                                <iframe
+                                    src="https://www.youtube.com/embed/FnmvycOY-yg"
+                                    title="Video BMW Serie 3"
+                                    allowfullscreen>
+                                </iframe>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INVENTARIO -->
+        <section id="inventario" class="py-4">
+
+            <h2 class="text-center mb-4">
+                Inventario de vehículos
+            </h2>
+
+            <p class="text-center">
+                Consulta los vehículos disponibles en Rivera Motors.
+            </p>
+
+
+            <div class="text-center mb-4">
+
+                <h5>
+                    Consultar información de un vehículo:
+                </h5>
+
+                <select
+                    id="selectorVehiculo"
+                    class="form-select w-50 mx-auto">
+
+                    <option value="">
+                        Selecciona un vehículo
+                    </option>
+
+                    @foreach (var vehiculo in Model)
+                    {
+                        <option value="@vehiculo.Nombre">
+                            @vehiculo.Nombre
+                        </option>
+                    }
+
+                </select>
+
+            </div>
+
+
+            <div
+                id="informacionVehiculo"
+                class="text-center mb-4">
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="py-4">
+
+            <h2 class="text-center mb-4">
+                Solicita información
+            </h2>
+
+            <p class="text-center">
+
+                ¿Estás interesado en alguno de nuestros vehículos?
+                Completa el siguiente formulario y uno de nuestros
+                asesores se pondrá en contacto contigo.
+
+            </p>
+
+
+            <div class="row justify-content-center">
+
+                <div class="col-12 col-md-8 col-lg-6">
+
+                    <form
+                        id="formularioContacto"
+                        class="border rounded shadow p-4"
+                        method="post"
+                        action="/Vehiculos/Contacto">
+
+
+                        <!-- NOMBRE -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="nombre"
+                                class="form-label">
+
+                                Nombre completo:
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nombre"
+                                name="nombre"
+                                class="form-control"
+                                placeholder="Escribe tu nombre completo"
+                                required>
+
+                        </div>
+
+
+                        <!-- CORREO -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="correo"
+                                class="form-label">
+
+                                Correo electrónico:
+
+                            </label>
+
+                            <input
+                                type="email"
+                                id="correo"
+                                name="correo"
+                                class="form-control"
+                                placeholder="ejemplo@correo.com"
+                                required>
+
+                        </div>
+
+
+                        <!-- TELÉFONO -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="telefono"
+                                class="form-label">
+
+                                Teléfono:
+
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="telefono"
+                                name="telefono"
+                                class="form-control"
+                                placeholder="300 000 0000"
+                                required>
+
+                        </div>
+
+
+                        <!-- EDAD -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="edad"
+                                class="form-label">
+
+                                Edad:
+
+                            </label>
+
+                            <input
+                                type="number"
+                                id="edad"
+                                name="edad"
+                                class="form-control"
+                                placeholder="Tu edad">
+
+                        </div>
+
+
+                        <!-- FECHA -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="fecha"
+                                class="form-label">
+
+                                Fecha para prueba de manejo:
+
+                            </label>
+
+                            <input
+                                type="date"
+                                id="fecha"
+                                name="fecha"
+                                class="form-control">
+
+                        </div>
+
+
+                        <!-- VEHÍCULO -->
+
+                        <fieldset class="mb-3">
+
+                            <legend class="fs-6">
+
+                                Selecciona el vehículo que te interesa:
+
+                            </legend>
+
+
+                            @foreach (var vehiculo in Model)
+                            {
+
+                                <div class="form-check">
+
+                                    <input
+                                        type="radio"
+                                        id="@vehiculo.Nombre.Replace(" ", "")"
+                                        name="vehiculo"
+                                        value="@vehiculo.Nombre"
+                                        class="form-check-input"
+                                        required>
+
+                                    <label
+                                        for="@vehiculo.Nombre.Replace(" ", "")"
+                                        class="form-check-label">
+
+                                        @vehiculo.Nombre
+
+                                    </label>
+
+                                </div>
+
+                            }
+
+                        </fieldset>
+
+
+                        <!-- INFORMACIÓN -->
+
+                        <fieldset class="mb-3">
+
+                            <legend class="fs-6">
+
+                                ¿Qué información deseas recibir?
+
+                            </legend>
+
+
+                            <div class="form-check">
+
+                                <input
+                                    type="checkbox"
+                                    id="informacion"
+                                    name="servicios"
+                                    value="Información del vehículo"
+                                    class="form-check-input">
+
+                                <label
+                                    for="informacion"
+                                    class="form-check-label">
+
+                                    Información del vehículo
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="form-check">
+
+                                <input
+                                    type="checkbox"
+                                    id="prueba"
+                                    name="servicios"
+                                    value="Prueba de manejo"
+                                    class="form-check-input">
+
+                                <label
+                                    for="prueba"
+                                    class="form-check-label">
+
+                                    Prueba de manejo
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="form-check">
+
+                                <input
+                                    type="checkbox"
+                                    id="financiacion"
+                                    name="servicios"
+                                    value="Opciones de financiación"
+                                    class="form-check-input">
+
+                                <label
+                                    for="financiacion"
+                                    class="form-check-label">
+
+                                    Opciones de financiación
+
+                                </label>
+
+                            </div>
+
+                        </fieldset>
+
+
+                        <!-- COMENTARIOS -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="comentarios"
+                                class="form-label">
+
+                                Comentarios:
+
+                            </label>
+
+                            <textarea
+                                id="comentarios"
+                                name="comentarios"
+                                class="form-control"
+                                placeholder="Escribe aquí tus preguntas o comentarios"
+                                rows="5"></textarea>
+
+                        </div>
+
+
+                        <!-- BOTÓN -->
+
+                        <div class="text-center">
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary">
+
+                                Enviar solicitud
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- MENSAJE -->
+
+                        <div id="mensajeFormulario"></div>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="text-center py-4 mt-5 border-top">
+
+        <p>
+            Rivera Motors &copy; 2026
+        </p>
+
+        <p>
+            Concesionario de automóviles
+        </p>
+
+    </footer>
+
+</div>

@@ -1,0 +1,529 @@
+@model List<RiveraMotors.Models.Vehiculo>
+
+@{
+    ViewData["Title"] = "Rivera Motors";
+}
+
+<div class="container">
+
+    <!-- ENCABEZADO -->
+
+    <header class="text-center py-5">
+
+        <h1>Rivera Motors</h1>
+
+        <p class="lead">
+            Tu próximo automóvil comienza aquí.
+        </p>
+
+        <p>
+            En Rivera Motors encontrarás vehículos seleccionados para ofrecer
+            comodidad, rendimiento y seguridad.
+        </p>
+
+    </header>
+
+
+    <!-- NAVEGACIÓN -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="#inicio">
+                Rivera Motors
+            </a>
+
+            <div class="navbar-nav">
+
+                <a class="nav-link" href="#inicio">
+                    Inicio
+                </a>
+
+                <a class="nav-link" href="#vehiculos">
+                    Vehículos
+                </a>
+
+                <a class="nav-link" href="#multimedia">
+                    Multimedia
+                </a>
+
+                <a class="nav-link" href="#inventario">
+                    Inventario
+                </a>
+
+                <a class="nav-link" href="#contacto">
+                    Contacto
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <main>
+
+
+        <!-- INICIO -->
+
+        <section id="inicio" class="py-5">
+
+            <h2>¿Por qué elegir Rivera Motors?</h2>
+
+            <ul>
+
+                <li>Vehículos seleccionados y revisados.</li>
+
+                <li>Asesoría personalizada.</li>
+
+                <li>Opciones de financiación.</li>
+
+                <li>Pruebas de manejo.</li>
+
+                <li>Atención enfocada en las necesidades de cada cliente.</li>
+
+            </ul>
+
+            <p>
+                Explora nuestros vehículos, conoce sus características y
+                solicita información sobre el modelo que más te interese.
+            </p>
+
+        </section>
+
+
+        <!-- VEHÍCULOS -->
+
+        <section id="vehiculos" class="py-5">
+
+            <h2 class="text-center mb-4">
+                Nuestros vehículos
+            </h2>
+
+            <div class="row">
+
+                @foreach (var vehiculo in Model)
+                {
+                    <div class="col-md-4 mb-4">
+
+                        <div class="card h-100 shadow">
+
+                            <div class="card-body">
+
+                                <h3 class="card-title">
+                                    @vehiculo.Nombre
+                                </h3>
+
+                                <p>
+                                    <strong>Tipo:</strong>
+                                    @vehiculo.Tipo
+                                </p>
+
+                                <p>
+                                    <strong>Año:</strong>
+                                    @vehiculo.Año
+                                </p>
+
+                                <p>
+                                    <strong>Motor:</strong>
+                                    @vehiculo.Motor
+                                </p>
+
+                                <p>
+                                    <strong>Precio:</strong>
+                                    $@vehiculo.Precio.ToString("N0")
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+
+        </section>
+
+
+        <!-- MULTIMEDIA -->
+
+        <section id="multimedia" class="py-5">
+
+            <h2>Conoce nuestros vehículos</h2>
+
+            <p>
+                Explora nuestros modelos a través de imágenes y videos.
+            </p>
+
+
+            <div class="row">
+
+
+                <!-- TOYOTA -->
+
+                <div class="col-md-4 mb-4">
+
+                    <div class="card h-100 shadow">
+
+                        <div class="card-body">
+
+                            <h3>Toyota Corolla</h3>
+
+                            <img
+                                src="~/imagenes/Corolla2026.jfif"
+                                alt="Toyota Corolla 2026"
+                                class="img-fluid rounded mb-3">
+
+                            <div class="ratio ratio-16x9">
+
+                                <iframe
+                                    src="https://www.youtube.com/embed/ZS70FAFk0cg"
+                                    title="Video Toyota Corolla"
+                                    allowfullscreen>
+                                </iframe>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MAZDA -->
+
+                <div class="col-md-4 mb-4">
+
+                    <div class="card h-100 shadow">
+
+                        <div class="card-body">
+
+                            <h3>Mazda CX-5</h3>
+
+                            <img
+                                src="~/imagenes/Mazda2026.jfif"
+                                alt="Mazda CX-5 2026"
+                                class="img-fluid rounded mb-3">
+
+                            <div class="ratio ratio-16x9">
+
+                                <iframe
+                                    src="https://www.youtube.com/embed/dfuKhmeyjug"
+                                    title="Video Mazda CX-5"
+                                    allowfullscreen>
+                                </iframe>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BMW -->
+
+                <div class="col-md-4 mb-4">
+
+                    <div class="card h-100 shadow">
+
+                        <div class="card-body">
+
+                            <h3>BMW Serie 3</h3>
+
+                            <img
+                                src="~/imagenes/BMW2025.jfif"
+                                alt="BMW Serie 3 2025"
+                                class="img-fluid rounded mb-3">
+
+                            <div class="ratio ratio-16x9">
+
+                                <iframe
+                                    src="https://www.youtube.com/embed/FnmvycOY-yg"
+                                    title="Video BMW Serie 3"
+                                    allowfullscreen>
+                                </iframe>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INVENTARIO -->
+
+        <section id="inventario" class="py-5">
+
+            <h2 class="text-center mb-4">
+                Inventario de vehículos
+            </h2>
+
+            <p>
+                Consulta los vehículos disponibles en Rivera Motors.
+            </p>
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-striped">
+
+                    <caption>
+                        Inventario de vehículos Rivera Motors
+                    </caption>
+
+                    <thead class="table-dark">
+
+                        <tr>
+
+                            <th>Tipo</th>
+                            <th>Vehículo</th>
+                            <th>Año</th>
+                            <th>Motor</th>
+                            <th>Precio</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (var vehiculo in Model)
+                        {
+                            <tr>
+
+                                <td>
+                                    @vehiculo.Tipo
+                                </td>
+
+                                <td>
+                                    @vehiculo.Nombre
+                                </td>
+
+                                <td>
+                                    @vehiculo.Año
+                                </td>
+
+                                <td>
+                                    @vehiculo.Motor
+                                </td>
+
+                                <td>
+                                    $@vehiculo.Precio.ToString("N0")
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+
+                    <tfoot>
+
+                        <tr>
+
+                            <td colspan="5" class="text-center">
+
+                                Total de vehículos disponibles:
+                                @Model.Count
+
+                            </td>
+
+                        </tr>
+
+                    </tfoot>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACTO -->
+
+        <section id="contacto" class="py-5">
+
+            <h2>Solicita información</h2>
+
+            <p>
+                ¿Estás interesado en alguno de nuestros vehículos?
+                Completa el siguiente formulario y uno de nuestros asesores
+                se pondrá en contacto contigo.
+            </p>
+
+
+            <!-- MENSAJE DEL CONTROLADOR -->
+
+            @if (TempData["Mensaje"] != null)
+            {
+                <div class="alert alert-success">
+
+                    @TempData["Mensaje"]
+
+                </div>
+            }
+
+
+           <!-- FORMULARIO -->
+
+            <form
+                asp-controller="Vehiculos"
+                asp-action="Registrar"
+                method="post"
+                class="border rounded shadow p-4">
+
+                <!-- NOMBRE -->
+
+                <div class="mb-3">
+
+                    <label for="Nombre" class="form-label">
+                        Nombre completo:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="Nombre"
+                        name="Nombre"
+                        class="form-control"
+                        placeholder="Escribe tu nombre completo"
+                        required>
+
+                </div>
+
+
+                <!-- TIPO -->
+
+                <div class="mb-3">
+
+                    <label for="Tipo" class="form-label">
+                        Tipo de vehículo:
+                    </label>
+
+                    <select
+                        id="Tipo"
+                        name="Tipo"
+                        class="form-select"
+                        required>
+
+                        <option value="">
+                            Selecciona un tipo
+                        </option>
+
+                        <option value="Sedán">
+                            Sedán
+                        </option>
+
+                        <option value="SUV">
+                            SUV
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- AÑO -->
+
+                <div class="mb-3">
+
+                    <label for="Año" class="form-label">
+                        Año:
+                    </label>
+
+                    <input
+                        type="number"
+                        id="Año"
+                        name="Año"
+                        class="form-control"
+                        min="2020"
+                        max="2026"
+                        required>
+
+                </div>
+
+
+                <!-- MOTOR -->
+
+                <div class="mb-3">
+
+                    <label for="Motor" class="form-label">
+                        Motor:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="Motor"
+                        name="Motor"
+                        class="form-control"
+                        placeholder="Ejemplo: 2.0 L"
+                        required>
+
+                </div>
+
+
+                <!-- PRECIO -->
+
+                <div class="mb-3">
+
+                    <label for="Precio" class="form-label">
+                        Precio:
+                    </label>
+
+                    <input
+                        type="number"
+                        id="Precio"
+                        name="Precio"
+                        class="form-control"
+                        min="0"
+                        required>
+
+                </div>
+
+
+                <!-- BOTÓN -->
+
+                <div class="text-center">
+
+                    <button
+                        type="submit"
+                        class="btn btn-success">
+
+                        Enviar solicitud
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="text-center py-4 mt-5 border-top">
+
+        <p>
+            Rivera Motors &copy; 2026
+        </p>
+
+        <p>
+            Concesionario de automóviles
+        </p>
+
+    </footer>
+
+</div>
